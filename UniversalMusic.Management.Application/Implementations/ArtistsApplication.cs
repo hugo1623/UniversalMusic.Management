@@ -11,7 +11,6 @@ namespace UniversalMusic.Management.Application.Implementations
         public ArtistsApplication(IArtistsRepository artistsRepository)
         {
             this.artistsRepository = artistsRepository;
-            
         }
         public async Task<List<Artist>> GetArtists()
         {
