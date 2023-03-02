@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using UniversalMusic.Management.Application.Dtos;
 using UniversalMusic.Management.Entity;
 
 namespace UniversalMusic.Management.Application.Interfaces
 {
     public interface IArtistsApplication
     {
-        Task<List<Artist>> GetArtists();
-        Task<Artist> GetArtist(int id);
+        Task<List<ArtistForListDto>> GetArtists();
+        Task<ArtistDetailDto> GetArtist(int id);
+        Task InsertArtist(ArtistForCreateDto artistForCreateDto);
     }
 }

@@ -11,5 +11,6 @@ namespace UniversalMusic.Management.Repository.Interfaces
     {
         Task<List<Artist>> GetArtists();
         Task<Artist> GetArtist(int id);
+        Task InsertArtist(Artist artist);
     }
 }

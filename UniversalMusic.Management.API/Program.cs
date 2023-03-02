@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using UniversalMusic.Management.Application.Implementations;
 using UniversalMusic.Management.Application.Interfaces;
+using UniversalMusic.Management.Application.Profiles;
 using UniversalMusic.Management.Repository;
 using UniversalMusic.Management.Repository.Implementations;
 using UniversalMusic.Management.Repository.Interfaces;
@@ -11,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ManagementContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")
     ));
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddScoped<IDiscsApplication, DiscsApplication>();
 builder.Services.AddScoped<IDiscsRepository, DiscsRepository>();
 
