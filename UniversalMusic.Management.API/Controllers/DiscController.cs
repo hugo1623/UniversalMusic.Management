@@ -42,12 +42,11 @@ namespace UniversalMusic.Management.API.Controllers
             await discsApplication.UpdateDisc(id, discForEditDto);
             return Ok();
         }
-        /*[HttpDelete]
+        [HttpDelete("id:int")]
         public async Task<ActionResult> Delete(int id)
         {
-            await ArtistsApplication.DeleteArtist(id);
+            await discsApplication.DeleteDisc(id);
             return Ok();
-        }*/
-
+        }
     }
 }

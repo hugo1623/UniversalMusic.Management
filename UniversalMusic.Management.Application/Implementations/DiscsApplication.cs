@@ -40,5 +40,11 @@ namespace UniversalMusic.Management.Application.Implementations
             mapper.Map(discForEditDto, discEntity);
             await discsRepository.UpdateDisc(discEntity);
         }
+
+        public async Task DeleteDisc(int id)
+        {
+            var discEntity = await discsRepository.GetDisc(id);
+            await discsRepository.DeleteDisc(discEntity);
+        }
     }
 }

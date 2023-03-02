@@ -34,5 +34,11 @@ namespace UniversalMusic.Management.Repository.Implementations
             context.Discs.Update(disc);
             await context.SaveChangesAsync();
         }
+
+        public async Task DeleteDisc(Disc disc)
+        {
+            context.Discs.Remove(disc);
+            await context.SaveChangesAsync();
+        }
     }
 }

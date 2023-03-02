@@ -8,5 +8,6 @@ namespace UniversalMusic.Management.Repository.Interfaces
         Task<Disc> GetDisc(int id);
         Task InsertDisc(Disc disc);
         Task UpdateDisc(Disc disc);
+        Task DeleteDisc(Disc disc);
     }
 }
