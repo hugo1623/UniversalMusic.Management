@@ -1,5 +1,6 @@
-﻿using UniversalMusic.Management.Application.Interfaces;
-using UniversalMusic.Management.Entity;
+﻿using AutoMapper;
+using UniversalMusic.Management.Application.Dtos;
+using UniversalMusic.Management.Application.Interfaces;
 using UniversalMusic.Management.Repository.Interfaces;
 
 namespace UniversalMusic.Management.Application.Implementations
@@ -7,20 +8,24 @@ namespace UniversalMusic.Management.Application.Implementations
     public class DiscsApplication : IDiscsApplication
     {
         private IDiscsRepository discsRepository;
+        private IMapper mapper;
 
-        public DiscsApplication(IDiscsRepository discsRepository)
+        public DiscsApplication(IDiscsRepository discsRepository, IMapper mapper)
         {
             this.discsRepository= discsRepository;
+            this.mapper= mapper;
         }
-        public async Task<List<Disc>> GetDiscs()
+        public async Task<List<DiscForListDto>> GetDiscs()
         {
             var discs = await discsRepository.GetDiscs();
-            return discs;
+            var discsDto = mapper.Map<List<DiscForListDto>>(discs);
+            return discsDto;
         }
-        public async Task<Disc> GetDisc(int id)
+        public async Task<DiscForDetailDto> GetDisc(int id)
         {
             var disc = await discsRepository.GetDisc(id);
-            return disc;
+            var discDto = mapper.Map<DiscForDetailDto>(disc);
+            return discDto;
         }
     }
 }
