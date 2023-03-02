@@ -34,5 +34,11 @@ namespace UniversalMusic.Management.Repository.Implementations
             context.Artists.Add(artist);
             await context.SaveChangesAsync();
         }
+
+        public async Task UpdateArtist(Artist artist)
+        {
+            context.Artists.Update(artist);
+            await context.SaveChangesAsync();
+        }
     }
 }
