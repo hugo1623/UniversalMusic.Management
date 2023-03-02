@@ -34,6 +34,12 @@ namespace UniversalMusic.Management.API.Controllers
             await artistsApplication.InsertArtist(artistForCreateDto);
             return Ok();
         }
+        [HttpPut("id:int")]
+        public async Task<ActionResult> Update(int id,[FromBody] ArtistForEditDto artistForEditDto)
+        {
+            await artistsApplication.UpdateArtist(id, artistForEditDto);
+            return Ok();
+        }
 
     }
 }

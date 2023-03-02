@@ -34,5 +34,12 @@ namespace UniversalMusic.Management.Application.Implementations
             var artistEntity = mapper.Map<Artist>(artistForCreateDto);
             await artistsRepository.InsertArtist(artistEntity);
         }
+
+        public async Task UpdateArtist(int id, ArtistForEditDto artistForEditDto)
+        {
+            var artistEntity = await artistsRepository.GetArtist(id);
+            mapper.Map(artistForEditDto, artistEntity);
+            await artistsRepository.UpdateArtist(artistEntity);
+        }
     }
 }

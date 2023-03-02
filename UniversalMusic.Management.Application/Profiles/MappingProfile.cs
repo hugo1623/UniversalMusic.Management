@@ -11,6 +11,7 @@ namespace UniversalMusic.Management.Application.Profiles
             CreateMap<Artist, ArtistForListDto>();
             CreateMap<Artist, ArtistDetailDto>();
             CreateMap<ArtistForCreateDto, Artist>().ReverseMap();
+            CreateMap<ArtistForEditDto,Artist>().ReverseMap();
 
             CreateMap<Disc, DiscForListDto>();
             CreateMap<Disc, DiscForDetailDto>();

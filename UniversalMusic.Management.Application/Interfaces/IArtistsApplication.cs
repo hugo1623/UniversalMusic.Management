@@ -1,5 +1,4 @@
 ﻿using UniversalMusic.Management.Application.Dtos;
-using UniversalMusic.Management.Entity;
 
 namespace UniversalMusic.Management.Application.Interfaces
 {
@@ -8,5 +7,6 @@ namespace UniversalMusic.Management.Application.Interfaces
         Task<List<ArtistForListDto>> GetArtists();
         Task<ArtistDetailDto> GetArtist(int id);
         Task InsertArtist(ArtistForCreateDto artistForCreateDto);
+        Task UpdateArtist(int id, ArtistForEditDto artistForEditDto);
     }
 }
