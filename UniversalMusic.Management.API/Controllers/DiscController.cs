@@ -36,6 +36,12 @@ namespace UniversalMusic.Management.API.Controllers
             await discsApplication.InsertDisc(discForCreateDto);
             return Ok();
         }
+        [HttpPut("id:int")]
+        public async Task<ActionResult> Update(int id, [FromBody] DiscForEditDto discForEditDto )
+        {
+            await discsApplication.UpdateDisc(id, discForEditDto);
+            return Ok();
+        }
         /*[HttpDelete]
         public async Task<ActionResult> Delete(int id)
         {

@@ -33,5 +33,12 @@ namespace UniversalMusic.Management.Application.Implementations
             var discEntity = mapper.Map<Disc>(discForCreateDto);
             await discsRepository.InsertDisc(discEntity);
         }
+
+        public async Task UpdateDisc(int id, DiscForEditDto discForEditDto)
+        {
+            var discEntity = await discsRepository.GetDisc(id);
+            mapper.Map(discForEditDto, discEntity);
+            await discsRepository.UpdateDisc(discEntity);
+        }
     }
 }

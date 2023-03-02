@@ -8,5 +8,6 @@ namespace UniversalMusic.Management.Application.Interfaces
         Task<List<DiscForListDto>> GetDiscs();
         Task<DiscForDetailDto> GetDisc(int id);
         Task InsertDisc(DiscForCreateDto discForCreateDto);
+        Task UpdateDisc(int id, DiscForEditDto discForEditDto);
     }
 }

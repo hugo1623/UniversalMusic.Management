@@ -28,5 +28,11 @@ namespace UniversalMusic.Management.Repository.Implementations
             context.Discs.Add(disc);
             await context.SaveChangesAsync();
         }
+
+        public async Task UpdateDisc(Disc disc)
+        {
+            context.Discs.Update(disc);
+            await context.SaveChangesAsync();
+        }
     }
 }
