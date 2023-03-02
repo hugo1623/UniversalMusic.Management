@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UniversalMusic.Management.Application.Dtos;
+using UniversalMusic.Management.Application.Implementations;
 using UniversalMusic.Management.Application.Interfaces;
 using UniversalMusic.Management.Entity;
 
@@ -35,6 +36,12 @@ namespace UniversalMusic.Management.API.Controllers
             await discsApplication.InsertDisc(discForCreateDto);
             return Ok();
         }
+        /*[HttpDelete]
+        public async Task<ActionResult> Delete(int id)
+        {
+            await ArtistsApplication.DeleteArtist(id);
+            return Ok();
+        }*/
 
     }
 }

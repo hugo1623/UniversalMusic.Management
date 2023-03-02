@@ -40,6 +40,12 @@ namespace UniversalMusic.Management.API.Controllers
             await artistsApplication.UpdateArtist(id, artistForEditDto);
             return Ok();
         }
+        [HttpDelete("id:int")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            await artistsApplication.DeleteArtist(id);
+            return Ok();
+        }
 
     }
 }

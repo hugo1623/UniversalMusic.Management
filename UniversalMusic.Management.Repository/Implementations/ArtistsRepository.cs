@@ -40,5 +40,11 @@ namespace UniversalMusic.Management.Repository.Implementations
             context.Artists.Update(artist);
             await context.SaveChangesAsync();
         }
+
+        public async Task DeleteArtist(Artist artist)
+        {
+            context.Artists.Remove(artist);
+            await context.SaveChangesAsync();
+        }
     }
 }

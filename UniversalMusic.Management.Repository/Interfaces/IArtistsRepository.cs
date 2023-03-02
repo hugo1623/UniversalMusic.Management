@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UniversalMusic.Management.Entity;
+﻿using UniversalMusic.Management.Entity;
 
 namespace UniversalMusic.Management.Repository.Interfaces
 {
@@ -13,5 +8,6 @@ namespace UniversalMusic.Management.Repository.Interfaces
         Task<Artist> GetArtist(int id);
         Task InsertArtist(Artist artist);
         Task UpdateArtist(Artist artist);
+        Task DeleteArtist(Artist artist);
     }
 }

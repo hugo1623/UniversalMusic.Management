@@ -41,5 +41,11 @@ namespace UniversalMusic.Management.Application.Implementations
             mapper.Map(artistForEditDto, artistEntity);
             await artistsRepository.UpdateArtist(artistEntity);
         }
+
+        public async Task DeleteArtist(int id)
+        {
+            var artistEntity = await artistsRepository.GetArtist(id);
+            await artistsRepository.DeleteArtist(artistEntity);
+        }
     }
 }

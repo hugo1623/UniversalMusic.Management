@@ -8,5 +8,6 @@ namespace UniversalMusic.Management.Application.Interfaces
         Task<ArtistDetailDto> GetArtist(int id);
         Task InsertArtist(ArtistForCreateDto artistForCreateDto);
         Task UpdateArtist(int id, ArtistForEditDto artistForEditDto);
+        Task DeleteArtist(int id);
     }
 }
