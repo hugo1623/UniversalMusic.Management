@@ -23,7 +23,7 @@ namespace UniversalMusic.Management.Repository.Implementations
             return disc;
         }
 
-        public async Task Insert(Disc disc)
+        public async Task InsertDisc(Disc disc)
         {
             context.Discs.Add(disc);
             await context.SaveChangesAsync();

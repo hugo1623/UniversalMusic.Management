@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UniversalMusic.Management.Application.Dtos
 {
-    internal class DiscForCreateDto
+    public class DiscForCreateDto
     {
         public string Name { get; set; }
 

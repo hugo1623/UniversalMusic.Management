@@ -29,5 +29,12 @@ namespace UniversalMusic.Management.API.Controllers
             var disc = await discsApplication.GetDisc(id);
             return disc;
         }
+        [HttpPost]
+        public async Task<ActionResult> Insert([FromBody] DiscForCreateDto discForCreateDto)
+        {
+            await discsApplication.InsertDisc(discForCreateDto);
+            return Ok();
+        }
+
     }
 }

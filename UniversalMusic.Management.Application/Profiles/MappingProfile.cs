@@ -14,6 +14,7 @@ namespace UniversalMusic.Management.Application.Profiles
 
             CreateMap<Disc, DiscForListDto>();
             CreateMap<Disc, DiscForDetailDto>();
+            CreateMap<DiscForCreateDto, Disc>().ReverseMap();
             
         }
     }

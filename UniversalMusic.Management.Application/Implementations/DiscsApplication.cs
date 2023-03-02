@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using UniversalMusic.Management.Application.Dtos;
 using UniversalMusic.Management.Application.Interfaces;
+using UniversalMusic.Management.Entity;
 using UniversalMusic.Management.Repository.Interfaces;
 
 namespace UniversalMusic.Management.Application.Implementations
@@ -26,6 +27,11 @@ namespace UniversalMusic.Management.Application.Implementations
             var disc = await discsRepository.GetDisc(id);
             var discDto = mapper.Map<DiscForDetailDto>(disc);
             return discDto;
+        }
+        public async Task InsertDisc(DiscForCreateDto discForCreateDto)
+        {
+            var discEntity = mapper.Map<Disc>(discForCreateDto);
+            await discsRepository.InsertDisc(discEntity);
         }
     }
 }
