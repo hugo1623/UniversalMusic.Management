@@ -19,6 +19,9 @@ builder.Services.AddScoped<IDiscsRepository, DiscsRepository>();
 builder.Services.AddScoped<IArtistsApplication, ArtistsApplication>();
 builder.Services.AddScoped<IArtistsRepository, ArtistsRepository>();
 
+//Cors
+builder.Services.AddCors(c => c.AddPolicy("GeneralPolicy", p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader())); 
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -32,6 +35,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("GeneralPolicy");
 
 app.UseHttpsRedirection();
 
