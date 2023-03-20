@@ -24,7 +24,7 @@ namespace UniversalMusic.Management.API.Controllers
             var discs = await discsApplication.GetDiscs();
             return discs;
         }
-        [HttpGet("id:int")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<DiscForDetailDto>> GetById(int id)
         {
             var disc = await discsApplication.GetDisc(id);
@@ -36,13 +36,13 @@ namespace UniversalMusic.Management.API.Controllers
             await discsApplication.InsertDisc(discForCreateDto);
             return Ok();
         }
-        [HttpPut("id:int")]
+        [HttpPut("{id:int}")]
         public async Task<ActionResult> Update(int id, [FromBody] DiscForEditDto discForEditDto )
         {
             await discsApplication.UpdateDisc(id, discForEditDto);
             return Ok();
         }
-        [HttpDelete("id:int")]
+        [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
             await discsApplication.DeleteDisc(id);

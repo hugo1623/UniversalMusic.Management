@@ -22,7 +22,7 @@ namespace UniversalMusic.Management.API.Controllers
             var artists = await artistsApplication.GetArtists();
             return artists;
         }
-        [HttpGet("id:int")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<ArtistDetailDto>> GetById(int id)
         {
             var artist = await artistsApplication.GetArtist(id);
@@ -34,13 +34,13 @@ namespace UniversalMusic.Management.API.Controllers
             await artistsApplication.InsertArtist(artistForCreateDto);
             return Ok();
         }
-        [HttpPut("id:int")]
+        [HttpPut("{id:int}")]
         public async Task<ActionResult> Update(int id,[FromBody] ArtistForEditDto artistForEditDto)
         {
             await artistsApplication.UpdateArtist(id, artistForEditDto);
             return Ok();
         }
-        [HttpDelete("id:int")]
+        [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
             await artistsApplication.DeleteArtist(id);
